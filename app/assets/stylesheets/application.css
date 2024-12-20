@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  display: grid;
+  place-items: center;
+  margin: 0; 
+}
+
+.btn {
+    appearance: auto;
+    user-select: none;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    white-space: pre;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    text-decoration: none;
+}

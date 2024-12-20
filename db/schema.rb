@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_19_122456) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_19_123446) do
+  create_table "patients", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.date "date_of_birth"
+    t.datetime "next_appointment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_patients_on_email", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -22,4 +32,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_122456) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
