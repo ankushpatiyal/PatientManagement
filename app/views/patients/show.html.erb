@@ -1,10 +1,34 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @patient %>
-
 <div>
   <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
   <%= link_to "Back to patients", patients_path %>
+</div>
 
-  <%= button_to "Destroy this patient", @patient, method: :delete %>
+
+
+<div class="container p-3 border bg-light">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Date of birth</th>
+          <th scope="col">Next appointment date</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr id="<%= dom_id @patient %>">
+          <td><%= @patient.name %></td>
+          <td><%= @patient.email %></td>
+          <td><%= @patient.date_of_birth %></td>
+          <td><%= @patient.next_appointment %></td>
+          <td><%= button_to "Destroy this patient", @patient, method: :delete, class: "btn btn-sm btn-danger" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

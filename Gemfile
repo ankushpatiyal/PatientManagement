@@ -31,8 +31,12 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-gem 'devise', '~> 4.9.2'
-gem 'kaminari'
+gem "devise", "~> 4.9.2"
+gem "kaminari"
+
+gem "bootstrap", "~> 5.3.3"
+gem "sassc-rails"
+gem "jquery-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -60,10 +64,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'rspec-rails', '5.1.1'
-  gem 'factory_bot_rails', '6.2.0'
-  gem 'debug'
-  gem 'faker'
-  gem 'shoulda-matchers'
-  gem 'rails-controller-testing'
+  gem "rspec-rails", "5.1.1"
+  gem "factory_bot_rails", "6.2.0"
+  gem "debug"
+  gem "faker"
+  gem "shoulda-matchers"
+  gem "rails-controller-testing"
 end

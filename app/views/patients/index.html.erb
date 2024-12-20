@@ -1,22 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Patients" %>
+<div class="container p-3 border bg-light">
+  <div class="row d-flex mb-3">
+    <div class="col">
+      <%= form_tag({ action: 'index' }, method: :get) do %>
+        <%= text_field_tag :query, params[:query], placeholder: "Search by name/email", class: 'form-control' %>
+      <% end %>
+    </div>
 
-<h1>Patients</h1>
+    <div class="col text-end mb-2">
+      <%= link_to "New patient", new_patient_path, class: 'btn btn-success'  %>
+      <%= link_to 'Upcoming Appointment', patients_path(upcoming: 'true'), class: 'btn btn-primary' %>
+    </div>
+  </div>
 
-<%= form_tag({ action: 'index' }, method: :get) do %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search by name/email" %>
-<% end %>
+  <div class="row">
+    <div class="col">
+      <div class="h3">Patients</div>
+    </div>
+  </div>
 
-<%= link_to 'Upcoming Appointment', patients_path(upcoming: 'true'), class: 'btn btn-primary' %>
 
-<div id="patients">
-  <% @patients.each do |patient| %>
-    <%= render patient %>
-    <p>
-      <%= link_to "Show this patient", patient %>
-    </p>
-  <% end %>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Date of birth</th>
+          <th scope="col">Next appointment date</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @patients.each do |patient| %>
+          <%= render patient %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<%= link_to "New patient", new_patient_path %>

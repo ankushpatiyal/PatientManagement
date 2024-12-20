@@ -1,22 +1,7 @@
-<div id="<%= dom_id patient %>">
-  <p>
-    <strong>Name:</strong>
-    <%= patient.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= patient.email %>
-  </p>
-
-  <p>
-    <strong>Date of birth:</strong>
-    <%= patient.date_of_birth %>
-  </p>
-
-  <p>
-    <strong>Next appointment:</strong>
-    <%= patient.next_appointment %>
-  </p>
-
-</div>
+<tr id="<%= dom_id patient %>">
+  <td><%= patient.name %></td>
+  <td><%= patient.email %></td>
+  <td><%= patient.date_of_birth %></td>
+  <td><%= patient.next_appointment %></td>
+  <td><%= link_to "View details", patient %></td>
+</tr>
