@@ -121,12 +121,12 @@ GEM
     diff-lcs (1.5.1)
     drb (2.2.1)
     error_highlight (0.7.0)
-    erubi (1.13.0)
+    erubi (1.13.1)
     execjs (2.10.0)
-    factory_bot (6.2.1)
+    factory_bot (6.5.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
+    factory_bot_rails (6.4.4)
+      factory_bot (~> 6.5)
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
@@ -380,7 +380,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9.2)
   error_highlight (>= 0.4.0)
-  factory_bot_rails (= 6.2.0)
+  factory_bot_rails (= 6.4.4)
   faker
   importmap-rails
   jbuilder
